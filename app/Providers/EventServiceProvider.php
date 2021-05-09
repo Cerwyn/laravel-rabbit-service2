@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Jobs\PingJob;
+use App\Jobs\UserCreated;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
@@ -29,6 +30,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        // App::bindMethod(UserCreated::class, '@handle', function ($job) {
+        //     return $job->handle();
+        // });
     }
 }
